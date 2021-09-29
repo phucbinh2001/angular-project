@@ -1,0 +1,100 @@
+image:
+  name: registry.gitlab.com/elsacorp/infrastructure/kube-helm/master/ci:1.18.2-3.2.4
+
+variables:
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: ""
+  KUBE_NAMESPACE: wp-cms-vn
+  PROJECT: user-dashboard
+
+.build-ui: &build-ui_template
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" "$CI_REGISTRY"
+    - docker build --build-arg ENV=$ENV -t $CI_REGISTRY_IMAGE:ui-$ENV-$CI_COMMIT_SHORT_SHA -f ui/dockerfile ui/
+    - docker push $CI_REGISTRY_IMAGE:ui-$ENV-$CI_COMMIT_SHORT_SHA
+
+# UI deployment template
+.deploy-ui: &deploy-ui_template
+  script:
+    - helm upgrade --install --wait --namespace=$KUBE_NAMESPACE $PROJECT-ui deploy/ui 
+      --set-string image.tag=ui-$ENV-$CI_COMMIT_SHORT_SHA
+      --set ingress.hosts[0].host=$INGRESS_HOST
+      --set ingress.hosts[0].paths[0]=$INGRESS_PATH
+
+# API deployment template
+.deploy-api: &deploy-api_template
+  script:
+    - deploy/scripts/setup_gpg.sh
+    - helm secrets upgrade --install --wait --namespace=$KUBE_NAMESPACE $PROJECT-api deploy/api 
+      --set-string image.tag=api-$CI_COMMIT_SHORT_SHA
+      -f deploy/api/$CI_JOB_STAGE/values.yaml
+      -f deploy/api/$CI_JOB_STAGE/secrets.yaml
+
+stages:
+  - build
+  - staging
+  - production
+
+# Build stage
+build-ui-stag:
+  <<: *build-ui_template
+  stage: build
+  variables:
+    ENV: staging
+
+build-ui-prod:
+  <<: *build-ui_template
+  stage: build
+  variables:
+    ENV: production
+  only:
+    - master
+
+build-api:
+  stage: build
+  image: docker:latest
+  services:
+    - docker:dind
+  script:
+    - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" "$CI_REGISTRY"
+    - docker build -t $CI_REGISTRY_IMAGE:api-$CI_COMMIT_SHORT_SHA -f api/Dockerfile api/
+    - docker push $CI_REGISTRY_IMAGE:api-$CI_COMMIT_SHORT_SHA
+
+# Staging stage
+deploy-ui-stag:
+  <<: *deploy-ui_template
+  stage: staging
+  environment: staging
+  variables:
+    ENV: staging
+    INGRESS_HOST: vn-stag.elsaspeak.com
+    INGRESS_PATH: /user
+
+deploy-api-stag:
+  <<: *deploy-api_template
+  stage: staging
+  environment: staging
+
+# Production stage
+deploy-ui-prod:
+  <<: *deploy-ui_template
+  stage: production
+  environment: asia
+  variables:
+    ENV: production
+    INGRESS_HOST: vn.elsaspeak.com
+    INGRESS_PATH: /user
+  when: manual
+  only:
+    - master
+
+deploy-api-prod:
+  <<: *deploy-api_template
+  stage: production
+  environment: asia
+  when: manual
+  only:
+    - master

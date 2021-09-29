@@ -1,0 +1,44 @@
+<div class="signin-container">
+  <div class="form-container" [formGroup]="loginForm">
+    <h1 class="signin-label">Chào mừng bạn quay lại!</h1>
+    <h1 class="signin-label">Đăng ký tài khoản ELSA thật đơn giản.</h1>
+
+    <nz-alert
+      class="error-message"
+      nzType="error"
+      [nzMessage]="errorMessage"
+      nzShowIcon
+      *ngIf="hasError"
+    ></nz-alert>
+
+    <input
+      nz-input
+      class="email-input"
+      placeholder="Email"
+      id="email"
+      type="email"
+      formControlName="email"
+    />
+
+    <input
+      nz-input
+      class="password-input"
+      placeholder="Password"
+      id="password"
+      type="password"
+      formControlName="password"
+    />
+
+    <button
+      nz-button
+      nzType="primary"
+      nzShape="round"
+      [nzLoading]="isLoggingIn"
+      class="signin-button"
+      type="submit"
+      (click)="onSubmit()"
+    >
+      Tiếp tục
+    </button>
+  </div>
+</div>

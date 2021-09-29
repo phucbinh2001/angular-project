@@ -1,0 +1,18 @@
+<header class="header">
+  <div class="container">
+    <div class="col-12 col-logo">
+      <a href="#" alt="">
+        <img
+          src="https://vn.elsaspeak.com/wp-content/themes/theme-page-user-new/image/Logo.png"
+          alt="Logo ELSA"
+        />
+      </a>
+      <a href="#" alt="" *ngIf="isLoggedIn" (click)="onLogoutPress()">
+        <span>Đăng xuất</span>
+      </a>
+      <a href="#" alt="" *ngIf="!isLoggedIn">
+        <span>Đăng ký</span>
+      </a>
+    </div>
+  </div>
+</header>

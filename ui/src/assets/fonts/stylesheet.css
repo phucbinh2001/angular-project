@@ -1,0 +1,35 @@
+@font-face {
+	font-family: 'AvenirNext-Medium';
+	src: url('avenirnextmedium06.eot');
+	src: url('avenirnextmedium06.eot?#iefix') format('embedded-opentype'),url('avenirnextmedium06.svg#avenirnextmedium06') format('svg'),url('avenirnextmedium06.ttf') format('truetype'),url('avenirnextmedium06.woff') format('woff'),url('avenirnextmedium06.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'AvenirNext-DemiBold';
+	src: url('avenirnextdemibold03.eot');
+	src: url('avenirnextdemibold03.eot?#iefix') format('embedded-opentype'),url('avenirnextdemibold03.svg#avenirnextdemibold03') format('svg'),url('avenirnextdemibold03.ttf') format('truetype'),url('avenirnextdemibold03.woff') format('woff'),url('avenirnextdemibold03.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'AvenirNext-Bold';
+	src: url('avenirnextbold01.eot');
+	src: url('avenirnextbold01.eot?#iefix') format('embedded-opentype'),url('avenirnextbold01.svg#avenirnextbold01') format('svg'),url('avenirnextbold01.ttf') format('truetype'),url('avenirnextbold01.woff') format('woff'),url('avenirnextbold01.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'BrownVN-Bold';
+	src: url('brownbold.eot');
+	src: url('brownbold.eot?#iefix') format('embedded-opentype'),url('brownbold.svg#brownbold') format('svg'),url('brownbold.ttf') format('truetype'),url('brownbold.woff') format('woff'),url('brownbold.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'AvenirNext-Regular';
+	src: url('avenirnextregular08.eot');
+	src: url('avenirnextregular08.eot?#iefix') format('embedded-opentype'),url('avenirnextregular08.svg#avenirnextregular08') format('svg'),url('avenirnextregular08.ttf') format('truetype'),url('avenirnextregular08.woff') format('woff'),url('avenirnextregular08.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+}

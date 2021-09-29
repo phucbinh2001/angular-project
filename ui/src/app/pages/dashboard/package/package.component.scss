@@ -1,0 +1,72 @@
+.dashbooard-package-container {
+  margin-top: 50px;
+}
+
+.card-package {
+  margin-top: 20px;
+  border-radius: 5px;
+  border: 1px solid #d9dadc;
+  overflow: hidden;
+}
+
+.card-package-header {
+  display: flex;
+  height: 220px;
+  -webkit-box-align: center;
+  align-items: center;
+  border: none;
+  background: linear-gradient(180deg, #ff52e3 -42.36%, #2980ff 166.67%);
+  border-radius: 5px 5px 0px 0px;
+}
+
+.card-package-header-title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 66px;
+  color: #ffffff;
+}
+
+.card-package-header-name {
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  padding: var(--spacer-16);
+  color: rgb(255, 255, 255);
+  margin-left: 40px;
+}
+
+.card-package-body {
+  padding: 10px;
+  margin-left: 30px;
+}
+
+.card-package-body-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-package-body-label {
+  flex: 1;
+  display: block;
+  font-size: 1em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  height: 60px;
+  padding-top: 15px;
+}
+
+.card-button-upgrade {
+  flex: 1;
+  width: 50%;
+  height: 60px;
+  color: #fff;
+  font-size: 20px;
+  background: linear-gradient(180deg, #29f4ff -46.11%, #5257ff 151.97%);
+  border-radius: 50px;
+  border: none;
+}

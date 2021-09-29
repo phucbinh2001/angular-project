@@ -1,0 +1,11 @@
+**/__pycache__/*
+/.idea/
+/.env
+/tools/build.sh
+venv
+.vscode
+local.env
+./**/__pycache__/
+./**/*.pyo
+./**/*.pyc
+.DS_Store

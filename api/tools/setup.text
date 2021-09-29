@@ -1,0 +1,2 @@
+Create Table: stripe-events with no index
+Create Table: stripe-users, stripe-products with 2 index
