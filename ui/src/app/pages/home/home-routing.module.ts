@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ChangePasswordComponent } from '../change-password/change-password.component';
+import { ChangeProfileComponent } from '../change-profile/change-profile.component';
 import { PackageComponent } from '../dashboard/package/package.component';
+import { ReceiptComponent } from '../receipt/receipt.component';
+import { RedeemComponent } from '../redeem/redeem.component';
+import { ScoreComponent } from '../score/score.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
@@ -18,26 +23,39 @@ const routes: Routes = [
         path: 'package',
         component: PackageComponent,
         pathMatch: 'full'
+      },
+      {
+        path: 'score',
+        component: ScoreComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'receipt',
+        component: ReceiptComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'redeem',
+        component: RedeemComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'score',
+        component: ScoreComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'change-profile',
+        component: ChangeProfileComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'change-password',
+        component: ChangePasswordComponent,
+        pathMatch: 'full'
       }
     ]
   }
-
-  // {
-  //   path: 'user-admin/:id',
-  //   // component: HelloComponent, // No need to mention the same component, in parent
-  //   children: [
-  //     // Children routes are inside the parent route
-  //     {
-  //       path: '',
-  //       component: HelloComponent,
-  //       pathMatch: 'full'
-  //     },
-  //     {
-  //       path: 'final-exams',
-  //       component: HolaComponent
-  //     }
-  //   ]
-  // }
 ];
 
 @NgModule({

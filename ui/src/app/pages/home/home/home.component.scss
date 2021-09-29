@@ -1,12 +1,14 @@
 .home-container {
   display: flex;
   flex-direction: row;
-  height: 100%;
+  height: max-content;
+  min-height: 100vh;
 }
 
 .home-content-container {
   background-color: #fff;
   flex: 3;
+  padding: 5%;
 }
 
 .home-sidebar {

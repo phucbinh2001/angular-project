@@ -1,0 +1,63 @@
+<div class="Page_root">
+    <div>
+        <h1 class="Page_title">Chỉnh sửa hồ sơ</h1>
+    </div>
+    <div class="form_edit">
+        <form id="formBox" action="" method="POST" novalidate="novalidate">
+            <div class="form_group">
+                <span class="Title chil">Tên người dùng</span>
+                <div class="Input_name chil">
+                    <input id="fullname" type="text" name="fullname" placeholder="Họ Và Tên">
+                </div>
+            </div>
+            <div class="form_group">
+                <span class="Title chil">Email</span>
+                <div class="Input_name chil">
+                    <input id="email" type="email" name="email" placeholder="Email">
+                </div>
+            </div>
+            <div class="form_group">
+                <span class="Title chil">Ngày Sinh</span>
+                <div class="Input_name chil">
+                    <div class="Input_day">
+                        <input class="BirthDay" name="BirthDay" type="text" placeholder="01">
+                    </div>
+                    <div class="Input_day ipd">
+                        <label class="box">
+                            <select class="BirthDayMonth">
+                                <option>Tháng 1</option>
+                                <option>Tháng 2</option>
+                                <option>Tháng 3</option>
+                                <option>Tháng 4</option>
+                                <option>Tháng 5</option>
+                                <option>Tháng 6</option>
+                                <option>Tháng 7</option>
+                                <option>Tháng 8</option>
+                                <option>Tháng 9</option>
+                                <option>Tháng 10</option>
+                                <option>Tháng 11</option>
+                                <option>Tháng 12</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="Input_day ipd">
+                        <input id="BirthDayYear" class="BirthDayYear" type="text" placeholder="1997">
+                    </div>
+                </div>
+            </div>
+            <div class="form_group">
+                <span class="Title chil">Địa chỉ</span>
+                <div class="Input_name chil">
+                    <input type="text">
+                </div>
+            </div>
+            <div class="form_group btn_group">
+                <span class="Title chil"></span>
+                <div class="Input_name chil">
+                    <button class="btn_cancle" type="submit">Hủy</button>
+                    <button class="btn_submit" type="submit">Lưu Hồ Sơ</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
