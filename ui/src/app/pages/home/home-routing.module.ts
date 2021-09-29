@@ -6,7 +6,6 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
     component: HomeComponent,
     children: [
       {
@@ -17,11 +16,28 @@ const routes: Routes = [
       },
       {
         path: 'package',
-        pathMatch: 'full',
-        component: PackageComponent
+        component: PackageComponent,
+        pathMatch: 'full'
       }
     ]
   }
+
+  // {
+  //   path: 'user-admin/:id',
+  //   // component: HelloComponent, // No need to mention the same component, in parent
+  //   children: [
+  //     // Children routes are inside the parent route
+  //     {
+  //       path: '',
+  //       component: HelloComponent,
+  //       pathMatch: 'full'
+  //     },
+  //     {
+  //       path: 'final-exams',
+  //       component: HolaComponent
+  //     }
+  //   ]
+  // }
 ];
 
 @NgModule({
