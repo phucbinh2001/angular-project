@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ChangePasswordComponent } from '../change-password/change-password.component';
 import { ChangeProfileComponent } from '../change-profile/change-profile.component';
 import { PackageComponent } from '../dashboard/package/package.component';
+import { ReceiptDetailComponent } from '../receipt-detail/receipt-detail.component';
 import { ReceiptComponent } from '../receipt/receipt.component';
 import { RedeemComponent } from '../redeem/redeem.component';
 import { ScoreComponent } from '../score/score.component';
@@ -32,6 +33,11 @@ const routes: Routes = [
       {
         path: 'receipt',
         component: ReceiptComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'receipt-detail',
+        component: ReceiptDetailComponent,
         pathMatch: 'full'
       },
       {
