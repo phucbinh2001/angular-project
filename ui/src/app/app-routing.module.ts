@@ -7,7 +7,7 @@ import { PackageComponent } from './pages/dashboard/package/package.component';
 const routes: Routes = [
   {
     path: 'home',
-    canActivate: [TokenGuard],
+    // canActivate: [TokenGuard],
     loadChildren: () =>
       import('./pages/home/home.module').then((m) => m.HomeModule)
   },
