@@ -22,8 +22,10 @@ const routes: Routes = [
       },
       {
         path: 'package',
-        component: PackageComponent,
-        pathMatch: 'full'
+        // component: YourPackageComponent,
+        pathMatch: 'full',
+        loadChildren: () =>
+          import('../dashboard/dashboard.module').then((m) => m.DashboardModule)
       },
       {
         path: 'score',
